@@ -1,0 +1,818 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Lena Weisman Personal Site</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+        <style>
+            body{
+                background-color: white;
+                max-width: auto;
+                margin-right: auto;
+                margin-left: auto;
+                font-family:'Montserrat', sans-serif;
+                
+            }
+            .headerContainer{
+                position: relative;
+                text-align: center;      
+            }
+            .headerPhoto{
+                background-image: url(imgs/dissertation/wk3c.jpg);
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 300px;
+                
+            }
+            .headerPhoto .headerText{
+                position: absolute; 
+                bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+                background: rgb(51, 51, 51); /* Fallback color */
+                background: rgba(51, 51, 51, 0.5); /* Black background with 0.5 opacity */
+                width: 100%; /* Full width */
+                height: 100%;
+                padding-top: 2rem;
+                font-family: 'Playfair', Georgia, 'Times New Roman', Times, serif;
+                color: white;
+                font-weight: 300;
+                font-size: 3rem; 
+            }
+            .navbar {   
+                width: 100%;
+                background-color:transparent;
+                overflow: auto;
+                font-family: 'Montserrat', sans-serif;
+                position: relative;
+            }
+  /* Navigation links */
+            .navbar a {
+                float:left;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                color: black;
+                text-decoration: none;
+                font-size: 2vw;
+                width: 33.33%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+                text-align: center; /* If you want the text to be centered */
+            }
+
+                /* Add a background color on mouse-over */
+            .navbar a:hover {
+                color:goldenrod;
+            }
+
+          .navbar a:visited{
+              color: goldenrod;
+          }
+
+                /* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+            @media screen and (max-width: 700px) {
+                .navbar a {
+                    float: none;
+                    display: block;
+                    width: 100%;
+                    text-align: left; /* If you want the text to be left-aligned on small screens */
+                }
+            }
+        /*container for page introduction/explanation*/
+            .introContainer{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+            img{
+                max-width: 100%;
+            }
+            .introPhoto{
+                flex-basis: 100%; 
+                padding-left: 3vw;
+            }
+            .introText{
+                position: relative;
+               padding-left: 2vw;
+               padding-right: 3vw;
+                color: black;
+                font-weight: 400;
+                font-family: 'Playfair', Georgia, 'Times New Roman', Times, serif;
+                font-size: 1.75vw; 
+
+            }
+
+            .modalContainer{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+            }
+            .modalPhoto{
+                flex-basis: 700%; 
+                padding-left: 1vw;
+            }
+            .modalText{
+                position: relative;
+                padding-left: 1vw;
+                padding-right: 2vw;
+                color: black;
+                font-weight: 400;
+                font-family: 'Playfair', Georgia, 'Times New Roman', Times, serif;
+                font-size: 1.75vw; 
+
+            }
+
+    /* CSS Grid Rows and Columns */
+            * {
+            box-sizing: border-box;
+            }
+
+            .header {
+            text-align: center;
+            padding: 32px;
+            }
+
+            .row {
+            display: -ms-flexbox; /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap; /* IE10 */
+            flex-wrap: wrap;
+            padding: 0 4px;
+            }
+
+            /* Create four equal columns that sits next to each other */
+            .column {
+            -ms-flex: 33.33%; /* IE10 */
+            flex: 33.33%;
+            max-width: 33.33%;
+            padding: 0 4px;
+            }
+
+            .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+            }
+
+            /* Responsive layout - makes a two column-layout instead of four columns */
+            @media screen and (max-width: 800px) {
+            .column {
+                -ms-flex: 50%;
+                flex: 50%;
+                max-width: 50%;
+            }
+            }
+
+            /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+            .column {
+                -ms-flex: 100%;
+                flex: 100%;
+                max-width: 100%;
+            }
+            }
+
+            .container {
+            position: relative;
+            width: 100%;
+            }
+
+            .image {
+            display: block;
+            width: 100%;
+            height: auto;
+            }
+
+            .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: gainsboro;
+            }
+
+            .container:hover .overlay {
+            opacity: 1;
+            }
+
+            .text {
+            color: black;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+            }
+
+            .modal-button{
+                position: absolute;
+                top: 85%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                background-color: gainsboro;
+                font-family: 'Montserrat', sans-serif;
+                color: grey;
+                font-size: 16px;
+                font-style: italic;
+                padding: 5px 15px;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                text-align: center;
+            }
+
+/* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            }
+
+            /* Modal Content */
+            .modal-content {
+                position: relative;
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+                -webkit-animation-name: animatetop;
+                -webkit-animation-duration: 0.4s;
+                animation-name: animatetop;
+                animation-duration: 0.4s
+            }
+            /* Add Animation */
+            @-webkit-keyframes animatetop {
+                from {top:-300px; opacity:0}
+                to {top:0; opacity:1}
+            }
+
+            @keyframes animatetop {
+                from {top:-300px; opacity:0}
+                to {top:0; opacity:1}
+            }
+
+            /* The Close Button */
+            .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+            }
+            .modal-header {
+                padding: 2px 16px;
+                background-color: white;
+                font-family: 'Montserrat', sans-serif;
+                color: Black;
+                font-size: 2.5vw;
+                font-weight: 200;
+            }
+
+            .modal-body {
+                padding: 2px 16px;
+                color: black;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 2vw;
+                font-weight: 400;
+
+            }
+
+            .modal-footer {
+                padding: 2px 16px;
+                background-color: white;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.5vw;
+                font-weight: 400;
+                font-style: italic;
+                color: grey;
+            }
+
+            .button{
+                position: absolute;
+                bottom: 0;
+            }
+
+            
+
+        </style>
+        <body>
+            <div class="headerContainer">
+                <div class="headerPhoto">
+                    <div class="headerText">
+                        <h1>Folk Theories of CSR</h1>
+                    </div>
+                </div>
+            </div>    
+            <div class="navbar">
+                <!-- <a>Lena</a>
+                <a href="Weisman_ArticleDesign/ArticleDesign.html">Resume</a> -->
+                <a href="website_personal_index.html">Home</a> 
+                <a href="blog.html">Projects</a>
+                <a href="dissertation.html">UoG ISP</a>
+            </div>
+            <div class="introContainer">
+                <div class="introPhoto">
+                    <img src="imgs/portrait.jpg">
+                </div>
+                <div class="introText">
+                    <h2>Welcome to Folk Theories of Corporate Social Responsibility website!</h2>
+                    <p>This website provides access to project details, data, and reflections from ‘Folk Theories: Corporate Social Responsibility and Philanthropy in our Digital Society’ project. 
+                        The intent behind both the research and this project site is to bring awareness to how corporations preform their social responsibilities and philanthropic endeavors in our digital society.
+                        While seeking to understand how everyday individuals recognize, acknowledge, and grasp the social responsibilities and corresponding actions of corporations. 
+                    </p>
+                   
+                </div>
+            </div>
+
+ <!-- Explore Now Text
+    then a gallery with everything in it for the project -->
+    <!-- Header -->
+            <div class="header">
+                <h1>Explore the Project Now</h1>
+                <p>To learn more about why I picked this project, how the project gallery is organized, and the ethical approval attained see thetop three gallery items </p>
+            </div>
+            
+            <!-- Photo Grid -->
+            <div class="row"> 
+ <!-- Column One -->            
+                <div class="column">
+                    <div class="container">
+                        <img src="imgs/dissertation/exploretheproject.png" class="image" style="width:100%" >  
+                        <div class="overlay">
+                            <div class="text">Details on how best to explore the gallery</div>
+
+                            <button class="modal-button" href="#myModal1">Learn More</button>
+
+                            <!-- The Modal -->
+                            <div id="myModal1" class="modal">
+                            
+                              <!-- Modal content -->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <span class="close">×</span>
+                                  <h2>How to explore this project</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        As you begin to explore you will see that that the project descriptions, details, data, and outcomes are dispersed throughout the gallery. There is no specific way for you to engage with this project, just follow your curiosity and click away! 
+                                        However, for those who seek to follow this project in a more organized manner note that the gallery follows the arrangement of a research or design process – meaning it begins with introduction and background information, followed by the research process, and finally outcomes and conclusions. 
+                                        As you hover over each item in the gallery a brief summary will appear of what you may learn, click the button for a more in-depth information on the project details or data item you are viewing. 
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <p>
+                                      For project highlights see "Visual Focus Groups," "Significance & Relevance,"
+                                      and "Overall Findings."
+                                  </p>
+                                </div>
+                              </div>
+                            
+                            </div>
+                        </div>
+                    
+                    </div> 
+                    <div class="container">
+                        <img src="imgs/dissertation/tg-06.png" class="image" style="width:100%" >  
+                        <div class="overlay">
+                            <div class="text">A summary on existing literature</div>
+
+                            <button class="modal-button" href="#myModal4">Learn More</button>
+
+                            <!-- The Modal -->
+                            <div id="myModal4" class="modal">
+                            
+                              <!-- Modal content -->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <span class="close">×</span>
+                                  <h2>Learn more about what existing literature on CSR in our Digtial Society</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        As you begin to explore you will see that that the project descriptions, details, data, and outcomes are dispersed throughout the gallery. There is no specific way for you to engage with this project, just follow your curiosity and click away! 
+                                        However, for those who seek to follow this project in a more organized manner note that the gallery follows the arrangement of a research or design process – meaning it begins with introduction and background information, followed by the research process, and finally outcomes and conclusions. 
+                                        As you hover over each item in the gallery a brief summary will appear of what you may learn, click the button for a more in-depth information on the project details or data item you are viewing. 
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <p>Learn more about existing literature see "Methodology" and "References." </p>
+                                </div>
+                              </div>
+                            
+                            </div>
+                        </div>
+                    
+                    </div> 
+                    <div class="container">
+                        <img src="imgs/dissertation/tg-07.png" class="image" style="width:100%" >  
+                        <div class="overlay">
+                            <div class="text">The significance and relevance to you</div>
+
+                            <button class="modal-button" href="#myModal7">Learn More</button>
+
+                            <!-- The Modal -->
+                            <div id="myModal7" class="modal">
+                            
+                              <!-- Modal content -->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <span class="close">×</span>
+                                  <h2>Why this project is significant and relevant to you?</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        As you begin to explore you will see that that the project descriptions, details, data, and outcomes are dispersed throughout the gallery. There is no specific way for you to engage with this project, just follow your curiosity and click away! 
+                                        However, for those who seek to follow this project in a more organized manner note that the gallery follows the arrangement of a research or design process – meaning it begins with introduction and background information, followed by the research process, and finally outcomes and conclusions. 
+                                        As you hover over each item in the gallery a brief summary will appear of what you may learn, click the button for a more in-depth information on the project details or data item you are viewing. 
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <p>Learn more about the research questions see "key questions" and "key takeaways." For more on the method see "methodolgy" and "Visual Focus Groups." </p>
+                                </div>
+                              </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <img src="imgs/dissertation/tg-12.png" class="image" style="width:100%" >  
+                        <div class="overlay">
+                            <div class="text">Learn about the data collection method used</div>
+
+                            <button class="modal-button" href="#myModal10">Learn More</button>
+
+                            <!-- The Modal -->
+                            <div id="myModal10" class="modal">
+                            
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <span class="close">×</span>
+                                    <h2>How to explore this project</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        As you begin to explore you will see that that the project descriptions, details, data, and outcomes are dispersed throughout the gallery. There is no specific way for you to engage with this project, just follow your curiosity and click away! 
+                                        However, for those who seek to follow this project in a more organized manner note that the gallery follows the arrangement of a research or design process – meaning it begins with introduction and background information, followed by the research process, and finally outcomes and conclusions. 
+                                        As you hover over each item in the gallery a brief summary will appear of what you may learn, click the button for a more in-depth information on the project details or data item you are viewing. 
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                    <p>To learn more the findings are dispersed throughout the gallery as individual images and diagrams. Additionally, see "key takeaways" and "future research reccomendations."</p>
+                                </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    
+                    </div>  
+                        
+                    
+                    
+                </div>
+  <!-- Column Two -->                      
+                <div class="column">
+                    <div class="container">
+                        <img src="imgs/dissertation/whythisresearch.png" class="image" style="width:100%" >  
+                        <div class="overlay">
+                            <div class="text">A reflection on why I choose this project</div>
+                        
+                                <!-- Trigger/Open The Modal -->
+                                <button class="modal-button" href="#myModal2">Learn More</button>
+
+                                <!-- The Modal -->
+                                <div id="myModal2" class="modal">
+
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <span class="close">×</span>
+                                    <h2>Reflection: How I came to study Folk Theories of CSR/P in our Digital Society?</h2>
+                                    </div>
+                                    <div class="modal-body">
+                                    <p>
+                                        ‘Folk Theories of CSR/P in our Digital Society’ is the culmination of two years of academic inquiry around how United States cultural institutions could successfully engage visitors through the implementation of immersive technology.
+                                         Like most research projects, questions often lead to more questions prompting the research to take on new approaches, take steps back, change directions, and so on. This research project is the outcome of just that – a question that turned into a project, leading to a master’s program, where learning informed a change of direction, uncovering an unknown interest, and thus resulting in a dissertation project on CSR/P. When I began research CP in the fall of my master’s program, my hope was I would be able to find a solution to needs of digital resources, specialized expertise, and funding cultural institutions need to bring technology to their visitor experiences, however, I discovered an area of academic inquiry that was simultaneously vast and limited in the specific information I was looking for. 
+                                        Additionally, I ran into a tiny little roadblock called: I knew nothing about what CSR/P was and how it operated in our Digital Society. 
+                                        So, I decided, if I eventually wanted to find a corporate solution to the cultural sector’s needs, I first needed to understand the behind the scenes of CSR/P. 
+                                    </p>
+                                    
+                                    </div>
+                                    <div class="modal-footer">
+                                    <p>For similar blog like posts look for other squares with the "reflection" sub-title</p>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+                    </div> 
+                    <div class="container">
+                        <img src="imgs/dissertation/tg-03.png" class="image" style="width:100%" >  
+                        <div class="overlay">
+                            <div class="text">Learn about the data collection method used</div>
+
+                            <button class="modal-button" href="#myModal5">Learn More</button>
+
+                            <!-- The Modal -->
+                            <div id="myModal5" class="modal">
+                            
+                              <!-- Modal content -->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <span class="close">×</span>
+                                  <h2>How to explore this project</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        As you begin to explore you will see that that the project descriptions, details, data, and outcomes are dispersed throughout the gallery. There is no specific way for you to engage with this project, just follow your curiosity and click away! 
+                                        However, for those who seek to follow this project in a more organized manner note that the gallery follows the arrangement of a research or design process – meaning it begins with introduction and background information, followed by the research process, and finally outcomes and conclusions. 
+                                        As you hover over each item in the gallery a brief summary will appear of what you may learn, click the button for a more in-depth information on the project details or data item you are viewing. 
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <p>To learn more the findings are dispersed throughout the gallery as individual images and diagrams. Additionally, see "key takeaways" and "future research reccomendations."</p>
+                                </div>
+                              </div>
+                            
+                            </div>
+                        </div>
+                    
+                    </div>  
+                    <div class="container">
+                        <img src="imgs/dissertation/tg-16.png" class="image" style="width:100%" >  
+                        <div class="overlay">
+                            <div class="text">Learn about the data collection method used</div>
+
+                            <button class="modal-button" href="#myModal8">Learn More</button>
+
+                            <!-- The Modal -->
+                            <div id="myModal8" class="modal">
+                            
+                              <!-- Modal content -->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <span class="close">×</span>
+                                  <h2>How to explore this project</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        As you begin to explore you will see that that the project descriptions, details, data, and outcomes are dispersed throughout the gallery. There is no specific way for you to engage with this project, just follow your curiosity and click away! 
+                                        However, for those who seek to follow this project in a more organized manner note that the gallery follows the arrangement of a research or design process – meaning it begins with introduction and background information, followed by the research process, and finally outcomes and conclusions. 
+                                        As you hover over each item in the gallery a brief summary will appear of what you may learn, click the button for a more in-depth information on the project details or data item you are viewing. 
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <p>To learn more the findings are dispersed throughout the gallery as individual images and diagrams. Additionally, see "key takeaways" and "future research reccomendations."</p>
+                                </div>
+                              </div>
+                            
+                            </div>
+                        </div>
+                    
+                    </div>  
+                    <div class="container">
+                        <img src="imgs/dissertation/Q_SA_all.png" class="image" style="width:100%" >  
+                        <div class="overlay">
+                            <div class="text">Learn about the data collection method used</div>
+
+                            <button class="modal-button" href="#myModal11">Learn More</button>
+
+                            <!-- The Modal -->
+                            <div id="myModal11" class="modal">
+                            
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <span class="close">×</span>
+                                    <h2>How to explore this project</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="modalContainer">
+                                        <div class="modalPhoto">
+                                            <img src="imgs/dissertation/Q_SA_all.png">
+                                        </div>
+                                        <div class="modalText">
+                                            <h2>Welcome to Folk Theories of Corporate Social Responsibility website!</h2>
+                                            <p>This website provides access to project details, data, and reflections from ‘Folk Theories: Corporate Social Responsibility and Philanthropy in our Digital Society’ project. 
+                                                The intent behind both the research and this project site is to bring awareness to how corporations preform their social responsibilities and philanthropic endeavors in our digital society.
+                                                While seeking to understand how everyday individuals recognize, acknowledge, and grasp the social responsibilities and corresponding actions of corporations. 
+                                            </p>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <p>To learn more the findings are dispersed throughout the gallery as individual images and diagrams. Additionally, see "key takeaways" and "future research reccomendations."</p>
+                                </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    
+                    </div>  
+
+                </div>
+<!-- Column Three                                                                                        -->              
+                <div class="column">
+                    <div class="container">
+                        <img src="imgs/dissertation/ethicalapproval.png" class="image" style="width:100%" >  
+                        <div class="overlay">
+                            <div class="text">Details on how best to explore the gallery</div>
+                        
+                            <!-- Trigger/Open The Modal -->
+                            <button class="modal-button" href="#myModal3">Learn More</button>
+
+                            <!-- The Modal -->
+                            <div id="myModal3" class="modal">
+
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <span class="close">×</span>
+                                <h2>Information of Ethical Approval</h2>
+                                </div>
+                                <div class="modal-body">
+                                <p>
+                                    This research project is conducted as an Independent Student Portfolio with the objective of fulfilling the master’s dissertation requirement for University of Glasgow’s MSc. Digital Society program. 
+                                    The entirety of the research project has been approved by the University of Glasgow’s ethics review board. And in accordance with the ethical review process all data published to the project site has been anonymized for the protection of participants identities. 
+                                    All research is conducted by the primary researcher Lena Weisman and overseen by an academic advisor, Dr. Elisabetta Ferrari.
+                                </p>
+                                
+                                </div>
+                                <div class="modal-footer">
+                                <h3>Modal Footer</h3>
+                                </div>
+                            </div>
+
+                            </div> 
+                        </div>
+                    </div> 
+                    <div class="container">
+                        <img src="imgs/dissertation/tg-05.png" class="image" style="width:100%" >  
+                        <div class="overlay">
+                            <div class="text">Details on how best to explore the gallery</div>
+
+                            <button class="modal-button" href="#myModal6">Learn More</button>
+
+                            <!-- The Modal -->
+                            <div id="myModal6" class="modal">
+                            
+                              <!-- Modal content -->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <span class="close">×</span>
+                                  <h2>How to explore this project</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        As you begin to explore you will see that that the project descriptions, details, data, and outcomes are dispersed throughout the gallery. There is no specific way for you to engage with this project, just follow your curiosity and click away! 
+                                        However, for those who seek to follow this project in a more organized manner note that the gallery follows the arrangement of a research or design process – meaning it begins with introduction and background information, followed by the research process, and finally outcomes and conclusions. 
+                                        As you hover over each item in the gallery a brief summary will appear of what you may learn, click the button for a more in-depth information on the project details or data item you are viewing. 
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <h3>Modal Footer</h3>
+                                </div>
+                              </div>
+                            
+                            </div>
+                        </div>
+                    
+                    </div> 
+                    <div class="container">
+                        <img src="imgs/dissertation/tg-08.png" class="image" style="width:100%" >  
+                        <div class="overlay">
+                            <div class="text">Details on how best to explore the gallery</div>
+
+                            <button class="modal-button" href="#myModal9">Learn More</button>
+
+                            <!-- The Modal -->
+                            <div id="myModal9" class="modal">
+                            
+                              <!-- Modal content -->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <span class="close">×</span>
+                                  <h2>How to explore this project</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        As you begin to explore you will see that that the project descriptions, details, data, and outcomes are dispersed throughout the gallery. There is no specific way for you to engage with this project, just follow your curiosity and click away! 
+                                        However, for those who seek to follow this project in a more organized manner note that the gallery follows the arrangement of a research or design process – meaning it begins with introduction and background information, followed by the research process, and finally outcomes and conclusions. 
+                                        As you hover over each item in the gallery a brief summary will appear of what you may learn, click the button for a more in-depth information on the project details or data item you are viewing. 
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <h3>Modal Footer</h3>
+                                </div>
+                              </div>
+                            
+                            </div>
+                        </div>
+                    
+                    </div> 
+                    <div class="container">
+                        <img src="imgs/dissertation/tg-09.png" class="image" style="width:100%" >  
+                        <div class="overlay">
+                            <div class="text">Learn about the data collection method used</div>
+
+                            <button class="modal-button" href="#myModal12">Learn More</button>
+
+                            <!-- The Modal -->
+                            <div id="myModal12" class="modal">
+                            
+                              <!-- Modal content -->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <span class="close">×</span>
+                                  <h2>How to explore this project</h2>
+                                </div>
+                                <div class="modal-body">
+                                    <p>
+                                        As you begin to explore you will see that that the project descriptions, details, data, and outcomes are dispersed throughout the gallery. There is no specific way for you to engage with this project, just follow your curiosity and click away! 
+                                        However, for those who seek to follow this project in a more organized manner note that the gallery follows the arrangement of a research or design process – meaning it begins with introduction and background information, followed by the research process, and finally outcomes and conclusions. 
+                                        As you hover over each item in the gallery a brief summary will appear of what you may learn, click the button for a more in-depth information on the project details or data item you are viewing. 
+                                    </p>
+                                </div>
+                                <div class="modal-footer">
+                                  <p>To learn more the findings are dispersed throughout the gallery as individual images and diagrams. Additionally, see "key takeaways" and "future research reccomendations."</p>
+                                </div>
+                              </div>
+                            
+                            </div>
+                        </div>
+                    
+                    </div> 
+                </div>
+            </div>
+            <script>
+               // Get the button that opens the modal
+                var btn = document.querySelectorAll("button.modal-button");
+
+                // All page modals
+                var modals = document.querySelectorAll('.modal');
+
+                // Get the <span> element that closes the modal
+                var spans = document.getElementsByClassName("close");
+
+                // When the user clicks the button, open the modal
+                for (var i = 0; i < btn.length; i++) {
+                btn[i].onclick = function(e) {
+                    e.preventDefault();
+                    modal = document.querySelector(e.target.getAttribute("href"));
+                    modal.style.display = "block";
+                }
+                }
+
+                // When the user clicks on <span> (x), close the modal
+                for (var i = 0; i < spans.length; i++) {
+                spans[i].onclick = function() {
+                    for (var index in modals) {
+                    if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+                    }
+                }
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target.classList.contains('modal')) {
+                    for (var index in modals) {
+                    if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+                    }
+                    }
+                }
+            </script>
+
+        </body>
+    </head>
+</html>
